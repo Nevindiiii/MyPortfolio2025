@@ -68,25 +68,18 @@ const Skills: React.FC = () => {
   };
 
   return (
-    <section
-      id="skills"
-      className="py-20 bg-gradient-to-br from-gray-50 to-blue-50"
-    >
+    <section id="skills" className="skills-section">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <motion.div
-          className="mb-16 text-center"
+          className="section-header"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="ml-145 section-divider"></div>
-          <h2 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">
-            Skills & Expertise
-          </h2>
-          <p className="max-w-3xl mx-auto text-xl text-gray-600">
-            Technologies and tools I use to bring ideas to life
-          </p>
+          <div className="section-divider mx-auto"></div>
+          <h2>Skills & Expertise</h2>
+          <p>Technologies and tools I use to bring ideas to life</p>
         </motion.div>
 
         <motion.div
@@ -100,7 +93,7 @@ const Skills: React.FC = () => {
             <motion.div
               key={skill.name}
               variants={cardVariants}
-              className="p-8 transition-all duration-300 bg-white shadow-lg rounded-2xl hover:shadow-xl"
+              className="skill-card"
               whileHover={{
                 scale: 1.05,
                 y: -10,
@@ -109,7 +102,7 @@ const Skills: React.FC = () => {
               whileTap={{ scale: 0.95 }}
             >
               <motion.div
-                className={`w-16 h-16 bg-gradient-to-r ${skill.color} rounded-full flex items-center justify-center mx-auto mb-6`}
+                className="skill-icon orange"
                 whileHover={{
                   rotate: 360,
                   scale: 1.1,
@@ -121,9 +114,9 @@ const Skills: React.FC = () => {
               <h3 className="mb-4 text-xl font-semibold text-center text-gray-900">
                 {skill.name}
               </h3>
-              <div className="w-full h-3 mb-2 overflow-hidden bg-gray-200 rounded-full">
+              <div className="skill-progress-bar">
                 <motion.div
-                  className={`bg-gradient-to-r ${skill.color} h-3 rounded-full`}
+                  className="skill-progress-fill orange"
                   variants={progressVariants}
                   initial="hidden"
                   whileInView="visible"

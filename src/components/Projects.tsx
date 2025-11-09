@@ -69,22 +69,19 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="px-6 py-20 bg-white">
+    <section id="projects" className="projects-section px-6">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-16 text-center">
-          <h2 className="mb-2 text-4xl font-bold text-black md:text-5xl">
-            My Projects
-          </h2>
-          <p className="text-lg text-gray-600">
-            A showcase of my recent work
-          </p>
+        <div className="section-header">
+          <div className="section-divider mx-auto"></div>
+          <h2>My Projects</h2>
+          <p>A showcase of my recent work</p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <div
               key={project.id}
-              className="relative overflow-hidden transition-transform transform bg-black shadow-lg group rounded-2xl hover:scale-105 hover:shadow-2xl"
+              className="project-card relative bg-black group"
             >
               {/* Project Image */}
               <div className="relative w-full h-64">
@@ -106,7 +103,7 @@ const Projects = () => {
                     {project.tech.map((tech, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 text-sm font-medium text-black bg-orange-500 rounded-full"
+                        className="tech-tag"
                       >
                         {tech}
                       </span>
